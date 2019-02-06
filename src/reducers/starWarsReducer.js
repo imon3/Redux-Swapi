@@ -8,10 +8,12 @@ const initialState = {
 };
 
 export const charsReducer = (state = initialState, action) => {
+
   switch (action.type) {
     // Fill me in with the important reducers
     // action types should be FETCHING, SUCCESS and FAILURE
     // your switch statement should handle all of these cases.
+
     case FETCH_PEOPLE_START:
       return {
         ...state,
@@ -28,10 +30,12 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_PEOPLE_FAIL:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        isFetching: false
       }
 
     default:
       return state;
   }
 };
+
